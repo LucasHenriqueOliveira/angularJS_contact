@@ -24,11 +24,18 @@
   </head>
   <body ng-app="starter">
 
-    <ion-pane>
+    <ion-pane ng-controller="ExampleController">
       <ion-header-bar class="bar-stable">
+        <button class="button" ng-click="getContactList()">Load</button>
         <h1 class="title">Ionic Blank Starter</h1>
+        <button class="button" ng-click="createContact()">New</button>
       </ion-header-bar>
       <ion-content>
+        <ion-list>
+          <ion-item ng-repeat="contact in contacts">
+            {{contact.displayName}}
+          </ion-item>
+        </ion-list>
       </ion-content>
     </ion-pane>
   </body>
